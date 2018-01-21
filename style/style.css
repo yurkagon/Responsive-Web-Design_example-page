@@ -103,12 +103,30 @@ header div:last-child {
 .block-2 .top-list {
   background: green;
   width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
 }
 
 .block-2 .bottom {
   flex: 2;
   background: red;
-  padding: 20px;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.block-2 .top-list .item, .block-2 .bottom .item {
+  background: #CECECE;
+  height: 20px;
+}
+
+.block-2 .top-list .item:first-child {
+  background: #9D9D9D;
+  height: 26px;
 }
 
 @media (max-width: 1280px) {
@@ -124,6 +142,10 @@ header div:last-child {
 @media (max-width: 375px) {
   .content div.container {
     flex-basis: 100%;
+    height: 160%;
+  }
+  .content div.container {
+    flex-basis: 100%;
     flex-direction: column;
   }
   .content .block-1 {
@@ -131,8 +153,10 @@ header div:last-child {
     align-items: center;
     justify-content: space-around;
     margin: 0;
-    padding: 0;
-    flex: 0.5;
+    padding: 15px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    flex: 0.2;
   }
   .content .block-2 {
     flex: 4;
@@ -142,7 +166,27 @@ header div:last-child {
   }
   .block-1 .item:nth-child(-n+3) {
     display: block;
-    flex-basis: 23%;
+    flex-basis: 26%;
+    max-height: 35px;
+  }
+  .block-2 .top {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    flex: 4;
+  }
+  .block-2 .top-img {
+    flex: 1;
+    width: 100%;
+    height: 50%;
+  }
+  .block-2 .top-list {
+    flex: 1;
+    width: 100%;
+    height: 50%;
+  }
+  .block-2 .bottom {
+    flex: 4;
   }
 }
 
