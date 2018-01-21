@@ -103,7 +103,6 @@ $item-first: #9D9D9D;
         width: $top-blocks-size;
     }
     .top-list{
-        background: green;
         width: $top-blocks-size;
         display: flex;
         flex-direction: column;
@@ -112,7 +111,6 @@ $item-first: #9D9D9D;
     }
     .bottom{
         flex: 2;
-        background: red;
         flex-direction: column;
         padding-left: $padding;
         padding-bottom: $padding;
@@ -174,6 +172,7 @@ $item-first: #9D9D9D;
     }
     .block-2{
         $top-blocks-size: 40%;
+        $padding: 20px;
         .top{
             flex-direction: column;
             justify-content: space-between;
@@ -188,12 +187,27 @@ $item-first: #9D9D9D;
         }
         .top-list{
             flex: 1;
-            width: 100%;
+            width: 89%;
             height: 50%;
+            padding: $padding;
+            //padding-right: 20px;
+            padding-left: 20px;
         }
-    
         .bottom{
-            flex:4;
+            width: 89%;
+            flex: 4;
+            padding: $padding;
+            padding-top: 15px;
+        }
+        $item-size: 20px;
+        .top-list .item, .bottom .item{
+            background: $item;
+            height: $item-size;
+            
+        }
+        .top-list .item:first-child{
+            background: $item-first;
+            height: $item-size*1.3;
         }
     }
 }
