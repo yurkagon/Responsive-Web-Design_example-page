@@ -50,23 +50,110 @@ header{
     }
 }
 /*CONTENT*/
+$block-1-bg: #FF5607;
+$block-1-item: #E84900;
+$img: #FFBD00;
 .content{
     display: flex;
     justify-content: center;
     div.container{
         flex-basis: 75%;
-        background: green;
         height: 80%;
+        display: flex;
+    }
+    .block-1{
+        background: $block-1-bg;
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-left: 20px;
+        padding-right: 15px;
+        padding-top: 10px;
+    }
+    .block-2{
+        flex:4;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.block-1{
+    .item{
+        background: $block-1-item;
+        height: 5%;
+        width: 90%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+.block-2{
+    $padding: 20px;
+    $top-blocks-size: 40%;
+    .top{
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        padding: $padding;
+        padding-right: 0;
+    }
+    .top-img{
+        background: $img;
+        //height: 50%;
+        width: $top-blocks-size;
+    }
+    .top-list{
+        background: green;
+        //height: 100px;
+        width: $top-blocks-size;
+    }
+
+
+
+    .bottom{
+        flex: 2;
+        background: red;
+        padding: $padding;
     }
 }
 @media (max-width:1280px) {
     .content div.container{
         flex-basis: 100%;
-        background: green;
         height: 80%;
     }
+    .block-2{
+        $padding: 20px;
+        $top-blocks-size: 40%;
+        .top{
+            padding-right: $padding;
+        }
+    }
 }
-
+@media (max-width:375px){
+    .content{
+        div.container{
+            flex-basis: 100%;
+            flex-direction: column;
+        }
+        .block-1{
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+            flex: 0.5;
+        }
+        .block-2{
+            flex:4;
+        }
+    }
+    .block-1 .item{
+        display: none;
+    }
+    .block-1 .item:nth-child(-n+3){
+        display: block;
+        flex-basis: 23%;
+    }
+}
 /*FOOTER*/
 $footer: #00D169;
 $footer-cont: #02B15A;
