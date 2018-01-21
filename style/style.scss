@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER*/
+$header: #00AEFF;
+$header-light: #36C3FF;
+$header-dark: #009BDD;
+$header-child-height: 67px;
+header{
+    background: $header;
+    display: flex;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+    justify-content: space-around;
+    div:first-child{
+        background: $header-dark;
+        flex-basis: 25%;
+        height: $header-child-height;
+    }
+    div:last-child{
+        background: $header-light;
+        flex-basis: 25%;
+        height: $header-child-height;
+    }
+}
+@media (max-width:1280px) {
+    header{
+        justify-content: space-between;
+        div{
+            margin:  40px;
+        }
+    }
+}
+@media (max-width:375px){
+    header{
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: 100;
+        div{
+            width: 90%;
+            margin: 10px;
+            height: 20px;
+        }
+    }
+}
+/*CONTENT*/
+.content{
+    display: flex;
+    justify-content: center;
+    div.container{
+        flex-basis: 75%;
+        background: green;
+        height: 80%;
+    }
+}
+@media (max-width:1280px) {
+    .content div.container{
+        flex-basis: 100%;
+        background: green;
+        height: 80%;
+    }
+}
+
+/*FOOTER*/
+$footer: #00D169;
+$footer-cont: #02B15A;
+$footer-item: #038042;
+footer{
+    display: flex;
+    width: 100%;
+    height: 220px;
+    align-items: center;
+    justify-content: center;
+    background: $footer;
+    div.footer-cont{
+        display: flex;
+        flex-direction: column;
+        height: 150px;
+        width: 150px;
+        background: $footer-cont;
+        margin: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    div.footer-item{
+        background: $footer-item;
+        width: 80%;
+        height: 200px;
+        margin: 10px;
+    }
+}
+@media (max-width:1280px) {
+    footer div.footer-cont{      
+        height: 170px;
+        width: 200px;
+    }
+}
+@media (max-width:375px) {
+    footer{
+        flex-direction: column;
+        padding: 0;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        div.footer-cont{
+            align-items: flex-start;
+            justify-content: center;
+            height: 170px;
+            width: 90%;
+            padding-left: 14px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        div.footer-item{
+            display: none;
+            margin: 0;
+            padding: 0;
+        }
+        div.footer-item:first-child{
+            display: block;
+            width: 80%;
+            height: 80%;
+        }
+    }
+}
